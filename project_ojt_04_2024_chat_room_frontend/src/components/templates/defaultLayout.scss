@@ -1,0 +1,64 @@
+@use '../../assets/scss/variable' as var;
+
+.default-layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  .default-layout__sub-menu {
+    height: 100%;
+    width: 70px;
+  }
+  @media (max-width: 355px) {
+    .default-layout__sub-menu {
+      display: none;
+    }
+    .default-layout-cherRonRight {
+      display: block;
+    }
+  }
+
+  .default-layout__main {
+    display: flex;
+    flex: 1;
+    .default-layout__main__side-bar {
+      max-height: 100vh;
+      overflow-y: auto;
+      background-color: var.$bg-notice-background-color;
+      width: 350px;
+      height: 100%;
+    }
+    .default-layout__main__content {
+      flex: 1;
+      height: 100%;
+    }
+  }
+
+  .default-layout-cherRonRight {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    font-size: 25px;
+    display: none;
+    cursor: pointer;
+
+    @media (max-width: 355px) {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .default-layout__main__side-bar {
+    display: none;
+  }
+}
+
+.default-layout-cherRonRight:active .default-layout__sub-menu {
+  display: block;
+  width: 100%;
+}
+
+.default-layout-cherRonRight:checked .default-layout__main {
+  display: none;
+}

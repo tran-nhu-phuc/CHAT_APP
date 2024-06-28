@@ -1,0 +1,178 @@
+@import '../../assets/scss/variable';
+
+.listRoomContainer {
+  margin: 20px 100px;
+  height: 100vh;
+
+  .tableTitle {
+    font-size: 24px;
+  }
+
+  .addButton {
+    background-color: $border-button-color;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .roomTable {
+    width: 100%;
+    border-collapse: collapse;
+    height: 60vh;
+    border: 1px solid #ccc;
+
+    th,
+    td {
+      border: 1px solid $border-default-color;
+      padding: 10px;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .roomName p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .buttonContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    tbody {
+      display: block;
+      height: 60vh;
+      overflow: auto;
+      width: 100%;
+    }
+
+    tr {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    .popupContainer {
+      position: relative;
+      display: inline-block;
+    }
+
+    .listMember {
+      position: relative;
+      overflow: visible;
+
+      .popup {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        width: 250px;
+        padding: 10px;
+        overflow: auto;
+        position: absolute;
+        z-index: 1000;
+        transition:
+          top 0.3s,
+          bottom 0.3s;
+      }
+
+      .popupAbove {
+        top: auto;
+        bottom: calc(100% + 10px);
+      }
+
+      .popupContent {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        max-height: 200px;
+      }
+
+      .memberInfo {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: visible;
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .editButton,
+    .deleteButton {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    .deleteButton {
+      background-color: #dc3545;
+    }
+  }
+}
+
+.roomName,
+.memberName {
+  max-width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+
+  &:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
+  }
+}
+
+.tooltip {
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  transform: translateX(20%) translateY(110%);
+  word-wrap: break-word;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s;
+  overflow: visible;
+}
+
+.memberButton {
+  border: none;
+  background: transparent;
+  position: relative;
+}

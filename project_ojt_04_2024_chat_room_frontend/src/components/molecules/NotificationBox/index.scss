@@ -1,0 +1,70 @@
+@use '../../../assets/scss/variable' as var;
+// #active {
+//   background-color: var.$bg-notice-active-color;
+// }
+.sidebar-box__no-notification {
+  img {
+    width: 100%;
+  }
+}
+.sidebar-box__container {
+  display: grid;
+  grid-template-columns: 50px auto;
+  padding: 10px;
+
+  .sidebar-box__content {
+    padding-left: 10px;
+    max-width: 100%;
+
+    .user-and-time {
+      display: grid;
+      grid-template-columns: 70% auto;
+      padding: 0;
+      .user {
+        p {
+          margin: 0;
+          font-size: var.$font-size-default;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+        }
+      }
+
+      .time {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        font-size: var.$font-size-default;
+        color: var.$text-sub-color;
+      }
+    }
+    .message-and-state {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      .message {
+        width: 70%;
+        color: var.$text-sub-color;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        font-size: var.$font-size-default;
+      }
+      .not-seen {
+        position: absolute;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var.$bg-notice-color;
+      }
+    }
+  }
+  &:hover {
+    background-color: black;
+    cursor: pointer;
+  }
+}

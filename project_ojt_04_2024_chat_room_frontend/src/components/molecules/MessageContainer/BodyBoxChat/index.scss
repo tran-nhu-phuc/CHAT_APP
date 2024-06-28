@@ -1,0 +1,100 @@
+@use '../../../../assets/scss/variable' as var;
+
+.body-box-chat__container {
+  width: 100%;
+  position: relative;
+  .body-box-chat-data-default {
+    width: 100%;
+    height:800px;
+  }
+  .body-box-chat-list-message {
+    width: 100%;
+    position: relative;
+    .body-box-chat-list-message {
+      width: 100%;
+      overflow-y: auto;
+      min-height: 70vh;
+      scroll-behavior: smooth;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+      .body-box-chat-arrow-down {
+        position: fixed;
+        bottom: 120px;
+        right: 25px;
+        font-size: 25px;
+        border: none;
+        outline: none;
+        color: red;
+      }
+      @media (max-width: 950px) {
+        .body-box-chat-arrow-down {
+          position: fixed;
+          bottom: 100px;
+          right: 10px;
+          font-size: 25px;
+          border: none;
+          outline: none;
+          color: red;
+        }
+      }
+
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    .body-box-chat-arrow-down {
+      position: fixed;
+      bottom: 120px;
+      right: 30px;
+      font-size: 35px;
+      border: none;
+      outline: none;
+      color: #b0d4fa;
+      background-color:white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      padding: 2px 8px;
+      .body-box-chat-get-message-latest{
+        font-size: 17px;
+        height: 100%;
+      }
+    }
+    @media (max-width: 950px) {
+      .body-box-chat-arrow-down {
+        position: fixed;
+        bottom: 100px;
+        right: 15px;
+        font-size: 25px;
+        display: flex;
+        align-items: end;
+        border: none;
+        outline: none;
+        color: #b7b7b7;
+        background-color: transparent;
+        opacity: 0.5;
+      }
+    }
+  }
+  .body-box-chat-loading {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .body-box-chat-loading-scroll-down {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}

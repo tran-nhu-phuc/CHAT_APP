@@ -1,0 +1,37 @@
+@use '../../../../assets/scss/variable' as var;
+.message-box-chat-owner__container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: end;
+  .message-box-chat-owner-content {
+    display: grid;
+    grid-template-rows: 1fr 25%;
+    background-color: var.$bg-message-self-color;
+    padding: 15px 10px;
+    min-width: 100px;
+    border-radius: 7px;
+    max-width: 80%;
+    word-break: break-all;
+    flex-direction: column;
+    row-gap: 5px;
+    .message-box-chat-owner-content-item {
+      font-size: 14px;
+      width: 100%;
+    }
+    .message-box-chat-owner-content-time-item {
+      font-size: 12px;
+      display: block;
+      overflow-x: hidden;
+      height: 20px;
+      max-width: 80px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  @media (max-width: 600px) {
+    .message-box-chat-owner-content {
+      max-width: 60%;
+    }
+  }
+}

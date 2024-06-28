@@ -1,0 +1,84 @@
+@use '../../../assets/scss/variable' as var;
+p {
+  margin: 0;
+}
+.sidebar-box__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50px auto;
+  padding: 10px;
+  .sidebar-box__content {
+    padding-left: 10px;
+    max-width: 100%;
+    .user-and-time {
+      display: grid;
+      grid-template-columns: 65% auto;
+      padding: 0;
+      .user {
+        .user-notification {
+          margin: 0;
+          font-size: var.$font-size-default;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+        }
+
+        .user-room-name-box-chat {
+          display: block;
+          overflow-x: hidden;
+          width: 120px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .time {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        font-size: var.$font-size-default;
+        color: var.$text-sub-color;
+        p {
+          display: block;
+          overflow-x: hidden;
+          max-width: 80px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .message-and-state {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      .message {
+        width: 80%;
+        p {
+          color: var.$text-sub-color;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
+          font-size: var.$font-size-default;
+          width: 85%;
+          word-break: break-all;
+          flex-direction: column;
+        }
+      }
+      .state {
+        position: absolute;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var.$bg-notice-color;
+      }
+    }
+  }
+  &:hover {
+    background-color:var.$bg-sidebar-active-color;
+    cursor: pointer;
+  }
+}

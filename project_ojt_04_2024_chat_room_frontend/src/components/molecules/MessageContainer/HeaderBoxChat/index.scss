@@ -1,0 +1,171 @@
+@use '../../../../assets/scss/variable' as var;
+.header-box-chat__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  .header-hox-chat-avatar {
+    width: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-hox-chat-name {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    row-gap: 2px;
+    position: relative;
+    div {
+      strong {
+        font-size: 20px;
+      }
+    }
+    .header-hox-chat-name-list-member {
+      width: 150px;
+      display: block;
+      overflow-x: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      .header-hox-chat-name-list-member-count-member {
+        cursor: pointer;
+        font-size: 12px;
+        column-gap: 5px;
+        display: flex;
+        align-items: center;
+        &:hover {
+          color: blue;
+        }
+      }
+      .header-hox-chat-name-list-member-box {
+        display: none;
+        background-color: #fff;
+        position: absolute;
+        width: 160px;
+        max-height: 160px;
+        overflow-y: scroll;
+        z-index: 1001;
+        min-height: 100px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        .header-hox-chat-name-list-member-box-item {
+          width: 100%;
+          height: 55px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding: 15px;
+          scroll-behavior: smooth;
+          cursor: pointer;
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          &:hover {
+            background-color: var.$bg-sidebar-active-color;
+          }
+          .header-hox-chat-name-list-member-box-item-avatar {
+            display: flex;
+            width: 40px;
+            height: 100%;
+            border: none;
+            img {
+              width: 35px;
+              height: 35px;
+              border-radius: 50%;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+          span {
+            width: 85%;
+            display: block;
+            overflow-x: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 15px;
+          }
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      &:hover .header-hox-chat-name-list-member-box {
+        display: block;
+      }
+    }
+  }
+  .header-hox-chat-add-member {
+    width: 70px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    .header-hox-chat-add-member-icon {
+      cursor: pointer;
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .header-box-chat__container {
+    .header-hox-chat-name {
+      div {
+        strong {
+          display: block;
+          overflow-x: hidden;
+          width: 250px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .header-box-chat__container {
+    .header-hox-chat-name {
+      div {
+        strong {
+          font-size: 19px;
+          display: block;
+          overflow-x: hidden;
+          width: 250px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 410px) {
+  .header-box-chat__container {
+    padding: 0 0 5px 10px;
+    .header-hox-chat-avatar {
+      display: none;
+    }
+    .header-hox-chat-name {
+      div {
+        strong {
+          font-size: 18px;
+          display: block;
+          overflow-x: hidden;
+          width: 200px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}

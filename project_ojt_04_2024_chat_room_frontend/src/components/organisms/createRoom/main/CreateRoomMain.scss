@@ -1,0 +1,99 @@
+@import '../../../../assets/scss/variable';
+
+.create-room__main {
+  width: 100%;
+  height: 480px;
+  margin-bottom: 50px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  background-color: #fff;
+
+  .create-room__main__list {
+    min-height: 95%;
+    margin: 0 0 0 15px;
+    overflow: scroll;
+    width: 100%;
+  }
+
+  .create-room__list-items-container {
+    border: 1.5px solid #ccc;
+    width: 95%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: default;
+    overflow: hidden;
+
+    .create-room_list-items__header {
+      background-color: $bg-sidebar-active-color;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 35px;
+      padding-right: 5px;
+
+      .create-room_list-items__header-left {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 80%;
+
+        h1 {
+          font-size: $font-size-medium;
+          cursor: default;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-clamp: 1;
+          overflow: hidden;
+          margin: 0 0 0 10px;
+        }
+
+        .create-room_list-items__header-left__drag {
+          font-size: $font-size-large;
+          cursor: pointer;
+        }
+      }
+
+      .create-room_list-items__header-right {
+        display: flex;
+        align-items: center;
+        width: 20%;
+        justify-content: flex-end;
+
+        .create-room_list-items__header__drop {
+          font-size: $font-size-large;
+          cursor: pointer;
+        }
+        span {
+          font-size: $font-size-small;
+          color: $text-sub-color;
+          margin-left: 10px;
+          cursor: pointer;
+
+          &:hover {
+            color: $text-main-color;
+          }
+        }
+      }
+    }
+  }
+
+  .create-room__main-add {
+    display: block;
+    font-size: $font-size-medium;
+    color: $bg-menu-color;
+    transition: 0.3s;
+    margin-left: 20px;
+    height: 10%;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $bg-menu-icon-hover-color;
+      transform: scale(1.05);
+    }
+  }
+}

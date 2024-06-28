@@ -1,0 +1,43 @@
+@import '../../../assets/scss/_variable.scss';
+.create-room {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  max-height: 700px;
+  box-shadow: $box-shadow-size $box-shadow-color;
+  border-radius: 10px;
+  overflow: hidden;
+  
+  .create-room__footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #FFF;
+
+    .create-room__footer-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      button {
+        padding: 6px 20px;
+        border-radius: 10px;
+        border: 1px solid #333;
+        background-color: transparent;
+        transition: 0.3s;
+
+        &:hover {
+          transform: scale(1.09);
+        }
+      }
+    }
+  }
+}

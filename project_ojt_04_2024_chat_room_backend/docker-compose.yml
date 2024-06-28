@@ -1,0 +1,31 @@
+version: '3'
+
+volumes:
+  dn1-ra-202311_db:
+    driver: local
+
+services:
+  dn1-ra-202311_db:
+    container_name: dn1-ra-202311_db
+    image: mysql:8.0
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=root'
+      - 'MYSQL_DATABASE=dn1_ra_202311'
+      - 'MYSQL_USER=rikkei'
+      - 'MYSQL_PASSWORD=Password123'
+      - 'TZ=Asia/Ho_Chi_Minh'
+    command:
+      [
+          'mysqld',
+          '--character-set-server=utf8mb4',
+          '--collation-server=utf8mb4_unicode_ci',
+          '--log-output=FILE',
+          '--log-error=/tmp/mysql-errors.log'
+      ]
+    tty: true
+    restart: always
+    privileged: true
+    volumes:
+      - dn1-ra-202311_db:/var/lib/mysql/
+    ports:
+      - '3307:3306'

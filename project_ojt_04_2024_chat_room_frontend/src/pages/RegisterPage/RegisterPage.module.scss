@@ -1,0 +1,62 @@
+@import '../../assets/scss/variable';
+
+.form-container {
+  margin: 0 60px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
+
+.submit-btn {
+  padding: 10px 40px;
+  background-color: $bg-menu-color;
+  color: $text-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 30px auto;
+  display: block;
+}
+
+.submit-btn:hover {
+  background-color: $primary-color;
+}
+
+.select-role-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+.selected-role {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heading {
+  margin: 10px 30px;
+}
+
+.role-label {
+  margin: 10px 30px;
+}
+
+.errorMessage {
+  color: $error-color;
+  margin: 0;
+}
+
+/* Reponsive cho các thiết bị di động */
+@media screen and (max-width: 768px) {
+  .form-container {
+    grid-template-columns: auto;
+    margin: 0 10px;
+    gap: 0;
+  }
+  .submit-btn {
+    margin: 20px auto;
+  }
+}

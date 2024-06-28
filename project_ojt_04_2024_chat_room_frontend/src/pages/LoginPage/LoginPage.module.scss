@@ -1,0 +1,111 @@
+@import '../../assets/scss/variable';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $background-color;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px 80px;
+  border-radius: 15px;
+}
+
+.login-tittle {
+  align-self: center;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.login-tittle h4 {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.logo-img {
+  width: 100px;
+  text-align: center;
+  margin: auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Input {
+  height: 46px;
+  width: 400px;
+  max-width: 100%;
+  padding-left: 16px;
+  padding-right: 40px;
+  background-color: $text-color;
+  border-radius: 10px;
+  border: 1px solid $background-color;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.passwordContainer {
+  position: relative;
+}
+
+.eyeIcon {
+  position: absolute;
+  top: 47%;
+  right: 12px;
+  transform: translateY(-18px);
+  font-size: 22px;
+  color: $eye-icon-color;
+  cursor: pointer;
+}
+
+.login-button {
+  width: 40%;
+  font-size: 20px;
+  align-self: center;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: $primary-color;
+  color: $text-color;
+  margin: 20px 0;
+  border: none;
+}
+
+.login-button:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
+.errorMessage {
+  color: $error-color;
+}
+
+.error.active {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 80%;
+    padding: 10px 20px;
+  }
+
+  .Input {
+    margin: 10px 20px;
+    width: 90%;
+  }
+
+  .login-button {
+    width: 70%;
+  }
+  .eyeIcon {
+    top: 12px;
+    transform: translateX(-50px);
+  }
+}

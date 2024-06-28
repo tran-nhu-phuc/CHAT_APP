@@ -1,0 +1,8 @@
+@import '../../../assets/scss/variable';
+.sidebar-list__container {
+  max-height: 100%;
+  overflow-y: auto;
+}
+.notification--active {
+  background-color: $bg-sidebar-active-color;
+}

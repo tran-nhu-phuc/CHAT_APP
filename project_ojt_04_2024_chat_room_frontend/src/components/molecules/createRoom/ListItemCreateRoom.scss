@@ -1,0 +1,170 @@
+@import '../../../assets/scss/variable';
+
+.create-room__list-items-container {
+  border: 1.5px solid #ccc;
+  width: 95%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: default;
+  overflow: hidden;
+
+  .create-room_list-items__header {
+    background-color: $bg-sidebar-active-color;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 35px;
+    padding-right: 5px;
+
+    .create-room_list-items__header-left {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 80%;
+
+      h1 {
+        font-size: $font-size-medium;
+        cursor: default;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-clamp: 1;
+        overflow: hidden;
+        margin: 0 0 0 10px;
+      }
+
+      .create-room_list-items__header-left__drag {
+        font-size: $font-size-large;
+        cursor: pointer;
+      }
+    }
+
+    .create-room_list-items__header-right {
+      display: flex;
+      align-items: center;
+      width: 20%;
+      justify-content: flex-end;
+
+      .create-room_list-items__header__drop {
+        font-size: $font-size-large;
+        cursor: pointer;
+      }
+      span {
+        font-size: $font-size-small;
+        color: $text-sub-color;
+        margin-left: 10px;
+        cursor: pointer;
+
+        &:hover {
+          color: $text-main-color;
+        }
+      }
+    }
+  }
+
+  .create-room__list-items__main {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    .create-room__list-items__main__room-name {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+
+      .create-room__list-items__main__room-name__title {
+        color: $text-main-color;
+        width: 20%;
+        font-size: $font-size-medium;
+      }
+
+      input {
+        width: 80%;
+        height: 30px;
+        border: 1px solid #999;
+        border-radius: 10px;
+        padding: 0 10px;
+      }
+    }
+
+    .create-room__list-items__main__room-name__error {
+      color: $text-main-color;
+      font-size: $font-size-default;
+    }
+
+    .create-room__list-items__main__room-members {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+
+      .create-room__list-items__main__room-members__title {
+        color: $text-main-color;
+        width: 20%;
+        font-size: $font-size-medium;
+      }
+
+      ul {
+        width: 80%;
+        max-height: 160px;
+        border: 1px solid #999;
+        border-radius: 10px;
+        padding: 10px;
+        overflow-y: scroll;
+
+        li {
+          font-size: $font-size-default;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-clamp: 1;
+          overflow: hidden;
+          height: 25px;
+          align-content: center;
+          padding: 0 5px;
+          border-radius: 10px;
+
+          &:nth-child(2n + 1) {
+            background-color: $bg-sidebar-active-color;
+          }
+        }
+      }
+    }
+    .create-room__list-items__main__room-members__error {
+      color: $text-main-color;
+      font-size: $font-size-default;
+    }
+    .create-room__list-items__main__edit-text {
+      font-size: $font-size-default;
+      color: $bg-menu-color;
+      transition: 0.3s;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: $bg-menu-icon-hover-color;
+      }
+    }
+  }
+}
+
+.error-name {
+  color: $bg-notice-color;
+  width: 20%;
+  font-size: $font-size-medium;
+}
+.error-members {
+  color: $bg-notice-color;
+  width: 20%;
+  font-size: $font-size-medium;
+}
+.error-name__text {
+  color: $bg-notice-color;
+  font-size: $font-size-default;
+}
+.error-members__text {
+  color: $bg-notice-color;
+  font-size: $font-size-default;
+}
